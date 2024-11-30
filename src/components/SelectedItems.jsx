@@ -42,27 +42,37 @@ const SelectedItems = ({ selectedItems, onDragStart, onDragEnd }) => {
 
   return (
     <div className="bg-gray-500 p-4 w-auto text-white">
-      <h3 className="text-lg font-bold mb-8">Objets Sélectionnés</h3>
-      <ul className="space-y-4">
-        {selectedItems.map((item) => (
-          <li
-            key={item.id}
-            className="mb-2 cursor-grab p-2 hover:bg-gray-600"
-            draggable="true"
-            onDragStart={(e) => handleDragStart(e, item)}
-            onDragEnd={onDragEnd}
-          >
-            <div className="w-24 h-auto mx-auto flex items-center justify-center overflow-hidden">
-              <img
-                src={item.previewImage}
-                alt={item.name}
-                className="max-w-full max-h-full object-contain pointer-events-none select-none"
-              />
-            </div>
-            <p className="text-sm text-center mt-2 select-none">{item.name}</p>
-          </li>
-        ))}
-      </ul>
+      <h3 className="text-lg font-bold mb-4">Objets Sélectionnés</h3>
+      {/* Conteneur avec défilement pour la liste */}
+      <div
+        className="overflow-y-auto space-y-4"
+        style={{
+          maxHeight: "calc(100vh - 8rem)", // Hauteur dynamique (8rem de marge pour l'espace supérieur/inférieur)
+        }}
+      >
+        <ul>
+          {selectedItems.map((item) => (
+            <li
+              key={item.id}
+              className="mb-2 cursor-grab p-2 hover:bg-gray-600"
+              draggable="true"
+              onDragStart={(e) => handleDragStart(e, item)}
+              onDragEnd={onDragEnd}
+            >
+              <div className="w-24 h-auto mx-auto flex items-center justify-center overflow-hidden">
+                <img
+                  src={item.previewImage}
+                  alt={item.name}
+                  className="max-w-full max-h-full object-contain pointer-events-none select-none"
+                />
+              </div>
+              <p className="text-sm text-center mt-2 select-none">
+                {item.name}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
