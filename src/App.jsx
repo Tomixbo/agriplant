@@ -37,8 +37,6 @@ export default function App() {
           },
         ],
       },
-      { name: "Fournisseur 02", items: [] },
-      { name: "Fournisseur 03", items: [] },
     ],
     pots: [
       {
@@ -87,7 +85,6 @@ export default function App() {
           },
         ],
       },
-      { name: "Fournisseur 03", items: [] },
     ],
     plants: [
       {
@@ -95,7 +92,7 @@ export default function App() {
         items: [
           {
             id: 301,
-            name: "Plante 1",
+            name: "Basil",
             previewImage: "/plant1-preview.jpg", // Image dans le catalogue
             canvasImage: "/plant1-canvas.png", // Image utilisée sur le canvas
             width: 60,
@@ -104,7 +101,7 @@ export default function App() {
           },
           {
             id: 302,
-            name: "Plante 2",
+            name: "Lavender",
             previewImage: "/plant2-preview.jpg",
             canvasImage: "/plant2-canvas.png",
             width: 60,
@@ -113,8 +110,29 @@ export default function App() {
           },
         ],
       },
-      { name: "Fournisseur 02", items: [] },
-      { name: "Fournisseur 03", items: [] },
+      {
+        name: "Fournisseur 02",
+        items: [
+          {
+            id: 303,
+            name: "Oregano",
+            previewImage: "/plant3-preview.jpg",
+            canvasImage: "/plant3-canvas.png",
+            width: 60,
+            height: 42.8,
+            category: "plant",
+          },
+          {
+            id: 304,
+            name: "Tomates",
+            previewImage: "/plant4-preview.jpg",
+            canvasImage: "/plant4-canvas.png",
+            width: 60,
+            height: 42.8,
+            category: "plant",
+          },
+        ],
+      },
     ],
   };
 
